@@ -28,7 +28,7 @@
     * @memberOf thinkster.profiles.controllers.ProfileController
     */
     function activate() {
-      var username = $routeParams.username.substr(1);
+      var username = $routeParams.username;
 
       Profile.get(username).then(profileSuccessFn, profileErrorFn);
       Posts.get(username).then(postsSuccessFn, postsErrorFn);
