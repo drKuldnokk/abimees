@@ -20,7 +20,7 @@
         controller: 'LoginController',
         controllerAs: 'vm',
         templateUrl: 'static/templates/authentication/login.html'
-    }).when('/username', {
+    }).when('/:username', {
         controller: 'ProfileController',
         controllerAs: 'vm',
         templateUrl: '/static/templates/profiles/profile.html'
