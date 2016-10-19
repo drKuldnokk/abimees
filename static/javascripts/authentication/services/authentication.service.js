@@ -9,13 +9,13 @@
     .module('thinkster.authentication.services')
     .factory('Authentication', Authentication);
     
-  Authentication.$inject = ['$cookies', '$http', '$rootScope'];
+  Authentication.$inject = ['$cookies', '$http', '$rootScope', 'Snackbar'];
   
   /**
   * @namespace Authentication
   * @returns {Factory}
   */
-  function Authentication($cookies, $http, $rootScope) {
+  function Authentication($cookies, $http, $rootScope, Snackbar) {
     /**
     * @name Authentication
     * @desc The Factory to be returned
@@ -56,7 +56,7 @@
     }
     
     function registerErrorFn(data, status, headers, config) {
-        console.error("register error");
+        Snackbar.error("register error");
     }
     
     /**
@@ -83,7 +83,7 @@
         }
         
         function loginErrorFn(data, status, headers, config) {
-            console.error('login error');
+            Snackbar.error('login error');
         }
     }
     
@@ -134,7 +134,7 @@
         }
         
         function logoutErrorFn() {
-            console.error("logout error");
+            Snackbar.error("logout error");
         }
     }
   } 
