@@ -20,10 +20,14 @@
         controller: 'LoginController',
         controllerAs: 'vm',
         templateUrl: 'static/templates/authentication/login.html'
-    }).when('/:username', {
+    }).when('user/:username', {
         controller: 'ProfileController',
         controllerAs: 'vm',
         templateUrl: '/static/templates/profiles/profile.html'
+    }).when('/new_job', {
+        templateUrl: '/static/templates/layout/new_job.html'
+    }).when('/how_does_it_work', {
+        templateUrl: '/static/templates/layout/how_does_it_work.html'
     }).when('/', {
         controller: 'IndexController',
         controllerAs: 'vm',

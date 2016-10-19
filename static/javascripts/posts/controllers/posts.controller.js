@@ -20,7 +20,7 @@
         }
         
         function calculateNumberOfColumns() {
-            var width = $(window).width();
+            /*var width = $(window).width();
             
             if (width >= 1200) {
                 return 4;
@@ -30,7 +30,8 @@
                 return 2;
             } else {
                 return 1;
-            }
+            }*/
+            return 1;
         }
         
         function approximateShortestColumn() {
