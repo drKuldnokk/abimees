@@ -55,6 +55,10 @@
         
         function render(current, original) {
             if (current !== original) {
+                console.log("render called");
+                console.log(current);
+                console.log(original);
+                
                 vm.columns = [];
                 
                 for (var i = 0; i < calculateNumberOfColumns(); ++i) {
