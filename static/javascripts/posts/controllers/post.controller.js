@@ -8,7 +8,6 @@
     PostController.$inject = ['$scope'];
     
     function PostController($scope) {
-        console.log("PostController called");
         var vm = this;
         
         vm.createdDate = createdDate;

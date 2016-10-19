@@ -15,7 +15,6 @@
         activate();
         
         function activate() {
-            console.log("PostsController.activate");
             $scope.$watchCollection(function () { return $scope.posts; }, render);
             //$scope.$watch(function() { return $(window).width(); }, render);
         }
@@ -55,9 +54,6 @@
         
         function render(current, original) {
             if (current !== original) {
-                console.log("render called");
-                console.log(current);
-                console.log(original);
                 
                 vm.columns = [];
                 

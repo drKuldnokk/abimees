@@ -9,13 +9,13 @@
     .module('thinkster.authentication.services')
     .factory('Authentication', Authentication);
     
-  Authentication.$inject = ['$cookies', '$http'];
+  Authentication.$inject = ['$cookies', '$http', '$rootScope'];
   
   /**
   * @namespace Authentication
   * @returns {Factory}
   */
-  function Authentication($cookies, $http) {
+  function Authentication($cookies, $http, $rootScope) {
     /**
     * @name Authentication
     * @desc The Factory to be returned
@@ -74,7 +74,12 @@
         
         function loginSuccessFn(data, status, headers, config) {
             Authentication.setAuthenticatedAccount(data.data);
-            window.location = '/';
+            
+            if ($rootScope.previousPath != undefined) {
+                window.location = $rootScope.previousPath;
+            } else {
+                window.location = "/";
+            }
         }
         
         function loginErrorFn(data, status, headers, config) {
