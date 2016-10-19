@@ -2,19 +2,63 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="well">
             <form role="form" ng-submit="vm.submit()">
+            
+                <legend>Uus töö</legend>
+            
                 <div class="form-group">
-                    <label for="post__content">Lisa uus töö</label>
+                    <label for="post__name" class="label-color">Nimetus</label>
                     <textarea class="form-control"
-                        id="post__content"
-                        rows="3"
-                        placeholder="ex. minu töö kirjeldus"
-                        ng-model="vm.content">
+                        id="post__name"
+                        rows="1"
+                        placeholder="ex. minu töö nimi"
+                        ng-model="vm.newPost.name">
                     </textarea>
                 </div>
                 
                 <div class="form-group">
+                    <label for="post__content" class="label-color">Kirjeldus</label>
+                    <textarea class="form-control"
+                        id="post__content"
+                        rows="3"
+                        placeholder="ex. minu töö kirjeldus"
+                        ng-model="vm.newPost.content">
+                    </textarea>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="custom_tag" class="control-label" style="color: #669999;">Otsisõna</label>
+                            <input class="form-control" id="custom_tag" placeholder="otsisõna" type="text" ng-model="vm.newPost.searchWord">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="field" class="control-label" style="color: #669999;">Valdkond</label>
+                            <select id="field" class="form-control" ng-model="vm.newPost.field">
+                                <option></option>
+                                <option>Reklaamfotod</option>
+                                <option>Iluteenindus</option>
+                                <option>Arvutite remont</option>
+                                <option>Catering</option>
+                                <option>Kinnisvara haldus</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location" class="control-label" style="color: #669999;">Asukoht</label>
+                            <select id="location" class="form-control" ng-model="vm.newPost.loc">
+                                <option></option>
+                                <option>Harjumaa</option>
+                                <option>Tartumaa</option>
+                                <option>Võrumaa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">
-                        Submit
+                        SISESTA
                     </button>
                 </div>
             </form>

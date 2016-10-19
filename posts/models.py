@@ -4,6 +4,9 @@ from authentication.models import Account
 
 class Post(models.Model):
     author = models.ForeignKey(Account)
+    name = models.CharField(max_length=50)
+    field = models.CharField(max_length=50)
+    location = models.CharField(max_length=50, blank=True)
     content = models.TextField()
     
     created_at = models.DateTimeField(auto_now_add=True)

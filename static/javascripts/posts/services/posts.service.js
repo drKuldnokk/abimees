@@ -20,9 +20,13 @@
             return $http.get('/api/v1/posts/');
         }
         
-        function create(content) {
+        function create(newPost) {
             return $http.post('/api/v1/posts/', {
-                content: content
+                name: newPost.name,
+                content: newPost.content,
+                field: newPost.field,
+                search_word: newPost.searchWord,
+                'location': newPost.loc
             });
         }
         

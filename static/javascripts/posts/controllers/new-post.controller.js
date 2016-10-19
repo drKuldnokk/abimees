@@ -23,7 +23,7 @@
         
         function submit() {
             $rootScope.$broadcast('post.created', {
-                content: vm.content,
+                newPost: vm.newPost,
                 author: {
                     username: Authentication.getAuthenticatedAccount().username
                 }
@@ -31,7 +31,7 @@
             
             //$scope.closeThisDialog();
         
-            Posts.create(vm.content).then(createPostSuccessFn, createPostErrorFn);
+            Posts.create(vm.newPost).then(createPostSuccessFn, createPostErrorFn);
             
             function createPostSuccessFn(data, status, headers, config) {
                 Snackbar.show('Uus töö lisatud!');
