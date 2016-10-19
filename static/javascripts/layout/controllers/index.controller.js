@@ -32,6 +32,7 @@
             });
             
             function postsSuccessFn(data, status, headers, config) {
+                console.log("posts arrived!");
                 vm.posts = data.data;
             }
             
