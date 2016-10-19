@@ -34,6 +34,7 @@
             
             function postsSuccessFn(data, status, headers, config) {
                 console.log("posts arrived!");
+                console.log(data);
                 vm.posts = data.data;
             }
             
