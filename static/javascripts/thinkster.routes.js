@@ -24,8 +24,8 @@
         controller: 'ProfileController',
         controllerAs: 'vm',
         templateUrl: '/static/templates/profiles/profile.html'
-    }).when('/new_job', {
-        templateUrl: '/static/templates/layout/new_job.html'
+    }).when('/new_post', {
+        templateUrl: '/static/templates/posts/new_post.html'
     }).when('/how_does_it_work', {
         templateUrl: '/static/templates/layout/how_does_it_work.html'
     }).when('/', {
