@@ -21,6 +21,7 @@
          * @memberOf thinkster.layout.controllers.IndexController
          */
         function activate() {
+            console.log("IndexController.activate");
             Posts.all().then(postsSuccessFn, postsErrorFn);
             
             $scope.$on('post.created', function(event, post) {
