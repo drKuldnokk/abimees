@@ -1,4 +1,4 @@
-# thinkster-django-angular-boilerplate
+# ARyhm_repo_veebirakendus
 
 ## Installation
 
@@ -7,9 +7,9 @@
 [Node.js](http://nodejs.org/).*
 
 * Fork this repository.
-* `$ git clone git@github.com:<your username>/thinkster-django-angular-boilerplate.git`
-* `$ mkvirtualenv thinkster-djangular`
-* `$ cd thinkster-django-angular-boilerplate/`
+* `$ git clone ssh://git@tarkvaratehnika.cs.ttu.ee:7999/aryhm/aryhm_repo_veebirakendus.git
+* `$ mkvirtualenv venv`
+* `$ cd ARyhm_repo_veebirakendus/`
 * `$ pip install -r requirements.txt`
 * `$ npm install -g bower`
 * `$ npm install`
@@ -17,3 +17,4 @@
 * `$ python manage.py migrate`
 * `$ python manage.py runserver`
 
+HTTPS kaudu push-imiseks aadress https://arne.riso@tarkvaratehnika.cs.ttu.ee/git/scm/aryhm/aryhm_repo_veebirakendus.git
