@@ -19,3 +19,8 @@ class AccountTestCase(TestCase):
     def test_get_full_name(self):
         account = Account.objects.create(first_name='esimene', last_name='teine')
         self.assertEqual(account.get_full_name(), 'esimene teine')
+	
+    # Reemo
+    def test_get_short_name(self):
+        account = Account.objects.create(first_name='esimene')
+        self.assertEqual(account.get_short_name(), 'esimene')
