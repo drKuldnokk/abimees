@@ -14,4 +14,8 @@ class PostTestCase(TestCase):
         post = Post.objects.create(author=account, name="nimi", content="sisu")
         self.assertTrue(post.created_at)
     
+    def test_updated_at_filled(self):
+        account = Account.objects.create(email='user@email.com', username='user')
+        post = Post.objects.create(author=account, name="nimi", content="sisu")
+        self.assertTrue(post.updated_at)
     
