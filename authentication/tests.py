@@ -14,3 +14,8 @@ class AccountTestCase(TestCase):
         account = Account.objects.get(username='user')
         self.assertEqual(account.email, 'user@email.com')
         self.assertEqual(account.username, 'user')
+        
+    # Kairit
+    def test_get_full_name(self):
+        account = Account.objects.create(first_name='esimene', last_name='teine')
+        self.assertEqual(account.get_full_name(), 'esimene teine')
