@@ -22,4 +22,4 @@ class PostTestCase(TestCase):
     def test_unicode(self):
         account = Account.objects.create(email='user@email.com', username='user')
         post = Post.objects.create(author=account, name="nimi", content="sisu")
-        self.assertEqual(post.__unicode__(), 'user@email.com')
+        self.assertEqual(post.__unicode__(), 'sisu')
