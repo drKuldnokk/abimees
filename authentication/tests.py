@@ -29,3 +29,11 @@ class AccountTestCase(TestCase):
     def test_created_at(self):
         account = Account.objects.create(first_name='esimene')
         self.assertTrue(account.created_at)
+
+    def test_short_name(self):
+        account = Account.objects.create(first_name='eesnimi', last_name="perenimi")
+        self.assertEqual(account.get_short_name(), 'eesnimi')
+    
+    def test_short_name(self):
+        account = Account.objects.create(first_name='eesnimi', last_name="perenimi")
+        self.assertEqual(account.get_full_name(), 'eesnimi perenimi')
