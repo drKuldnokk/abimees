@@ -19,3 +19,7 @@ class PostTestCase(TestCase):
         post = Post.objects.create(author=account, name="nimi", content="sisu")
         self.assertTrue(post.updated_at)
     
+    def test_unicode(self):
+        account = Account.objects.create(email='user@email.com', username='user')
+        post = Post.objects.create(author=account, name="nimi", content="sisu")
+        self.assertEqual(post.__unicode__(), 'user@email.com')
