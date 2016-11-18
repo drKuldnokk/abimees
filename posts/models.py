@@ -18,6 +18,11 @@ class Post(models.Model):
         return '{0}'.format(self.content)
     
     def propose_to_providers(self):
-        if self.search_word not "":
+        if self.search_word != "":
             scrapyd = ScrapydAPI('http://localhost:7556')
-            scrapyd.schedule('kratt', 'providers', search_word=self.search_word, location=self.location)
+            scrapyd.schedule(
+                'kratt', 
+                'providers', 
+                search_word=self.search_word, 
+                location=self.location
+            )
