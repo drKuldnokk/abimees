@@ -1,10 +1,12 @@
 from django.db import models
+from scrapyd_api import ScrapydAPI
 
 from authentication.models import Account
 
 class Post(models.Model):
     author = models.ForeignKey(Account)
     name = models.CharField(max_length=50)
+    search_word = models.CharField(max_length=50, blank=True)
     field = models.CharField(max_length=50)
     location = models.CharField(max_length=50, blank=True)
     content = models.TextField()
@@ -14,3 +16,8 @@ class Post(models.Model):
     
     def __unicode__(self):
         return '{0}'.format(self.content)
+    
+    def propose_to_providers(self):
+        if self.search_word not "":
+            scrapyd = ScrapydAPI('http://localhost:7556')
+            scrapyd.schedule('kratt', 'providers', search_word=self.search_word, location=self.location)
