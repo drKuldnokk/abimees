@@ -21,6 +21,7 @@
         }
         
         function create(newPost) {
+            console.log(newPost)
             return $http.post('/api/v1/posts/', {
                 name: newPost.name,
                 content: newPost.content,
